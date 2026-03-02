@@ -21,8 +21,8 @@ jobs:
 
       - name: Send Slack Notification (Success)
         if: success()
-        run: curl -X POST -H 'Content-type: application/json' --data '{"text":"✅ *Success!* The GitHub Actions build for devops-webapp passed."}' ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: curl -X POST -H 'Content-type: application/json' --data '{"text":"✅ *Success!* The build for devops-webapp passed."}' ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Send Slack Notification (Failure)
         if: failure()
-        run: curl -X POST -H 'Content-type: application/json' --data '{"text":"❌ *Alert!* The GitHub Actions build for devops-webapp failed."}' ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: curl -X POST -H 'Content-type: application/json' --data '{"text":"❌ *Alert!* The build for devops-webapp failed."}' ${{ secrets.SLACK_WEBHOOK_URL }}
